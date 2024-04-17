@@ -1,0 +1,16 @@
+<div class="container">
+<h1>Itt vannak a Szegedi menetrend hírei</h1>
+@for (new of news; track $index) {
+    <mat-card>
+        <mat-card-header> 
+            <h2>{{new.Cim}}</h2>            
+            
+        </mat-card-header>
+        <mat-card-content>
+            <img *ngIf="new.Kep" src="../../../assets/{{new.Kep}}" >
+            <h3>Dátum: {{new.Datum}}</h3>
+            {{new.Tartalom}}
+        </mat-card-content>
+    </mat-card>
+}
+</div>

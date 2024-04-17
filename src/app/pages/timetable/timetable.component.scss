@@ -1,0 +1,78 @@
+td{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+table{
+    text-align: center;
+    border-collapse: collapse;
+    border-right: 1px solid black;
+    width: 60%;
+    background-color: #d3cbe7;
+    padding-bottom: 5px;
+}
+th{
+    text-align: center;
+    border: 1px solid black;
+}
+td:hover{
+    background-color: #303f9f;
+    color: white;
+}
+tr{
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+mat-card{
+    width: 45vw;
+    margin-right: 5px;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+    border: 1px solid #303f9f;
+    background-color: #b2a5d5;
+}
+div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+@media screen and (max-width: 600px){
+    mat-card{
+        width: 90vw;
+        margin-bottom: 3vh;
+    }
+    table{
+        width: 90%;
+    }
+    
+}
+mat-card > div{
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid #303f9f;
+    background-color: #b2a5d5;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+mat-card > div >button{
+    margin-left: 10px;
+    margin-right: 10px;   
+}
+mat-card > div > button:hover{
+    transform: scale(1.4);
+}
+
+mat-card > div > mat-label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.nyomott{
+    color: white;
+}

@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 50vh;
+    padding-top: 10vh;
+    width: 100%;
+}
+mat-card{
+    height: 80vh;
+    font-size: x-large;
+}
+mat-card-header{
+    display: block;
+    background-color: #b2a5d5;
+    padding-bottom: 5px;
+    
+}
+mat-card-title{
+    text-align: center;
+    
+    width: 100%;
+}
+
+p{  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+mat-card-content{
+    padding-top: 5vh;
+}

@@ -1,0 +1,19 @@
+img{
+    height: 25vh;
+    float: right;
+}
+
+
+mat-card{
+    width: 60vw;
+    margin-right: 5px;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+    border: 1px solid #303f9f;
+    background-color: #b2a5d5;
+    margin-bottom: 5vh;
+}

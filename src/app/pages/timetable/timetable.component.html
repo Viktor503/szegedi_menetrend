@@ -1,0 +1,51 @@
+<div>
+    <div>
+    <mat-card>
+        <mat-card-header><h1>Válassz járművet és megállót!</h1></mat-card-header>
+        <mat-form-field>
+            <mat-label>Válassz egy járművet: </mat-label>
+            <mat-select [(value)]="vehicle">
+                @for (vehicle of vehicles; track vehicle) {
+                    <mat-option value="{{vehicle}}">{{vehicle}}</mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field *ngIf="vehicle">
+            <mat-label>Válassz egy megállót: </mat-label>    
+            <mat-select [(value)]="megallo">
+                <mat-option value="Szeged">Szeged</mat-option>
+                <mat-option value="Szeged">Szeged</mat-option>
+                <mat-option value="Szeged">Szeged</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field *ngIf="vehicle && megallo">
+            <mat-label>Válassz irányt: </mat-label>    
+            <mat-select [(value)]="irany">
+                <mat-option value="haza">haza</mat-option>
+                <mat-option value="el">el</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card>
+    </div>
+    <div >
+    <mat-card *ngIf="megallo&&vehicle&&irany">
+        <mat-card-header><h1>Ez itt a {{vehicle}} jármű menetrendje {{megallo}} megállóból {{irany}}!</h1></mat-card-header>
+        <div>
+            <button mat-icon-button color="primary" (click)="liked()" [ngClass]="{'nyomott': likestate==1, 'sima': likestate!=1}"><mat-icon>thumb_up</mat-icon></button>
+            <mat-label color="primary">{{likes}}</mat-label>
+            <button mat-icon-button color="primary" (click)="disliked()" [ngClass]="{'nyomott': likestate==2, 'sima': likestate!=2}"><mat-icon>thumb_down</mat-icon></button>
+            <mat-label color="primary">{{dislikes}}</mat-label>
+        </div>
+        <table>
+        @for (hour of formatted.keys(); track $index) {
+            <tr>
+                <th>{{hour}}</th>
+            @for (index of formatted.get(hour); track $index) {
+                <td>{{index}}</td>
+            }
+            </tr>
+        }
+        </table>
+    </mat-card>
+    </div>
+</div>

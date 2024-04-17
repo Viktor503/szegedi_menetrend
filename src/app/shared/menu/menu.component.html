@@ -1,0 +1,8 @@
+
+<nav mat-tab-nav-bar [tabPanel]="tabPanel" color="accent">
+    @for (link of linkNames.keys(); track link) {
+      <a mat-tab-link routerLink="{{link}}" > {{linkNames.get(link.toString())}} </a>
+    }
+</nav>
+<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+  
