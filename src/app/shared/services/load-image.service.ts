@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFireStorage} from '@angular/fire'
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -7,4 +7,5 @@ import { AngularFireStorage} from '@angular/fire'
 export class LoadImageService {
 
   constructor() { }
+  
 }

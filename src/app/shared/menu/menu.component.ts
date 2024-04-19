@@ -9,18 +9,13 @@ import { EventEmitter } from '@angular/core';
 })
 export class MenuComponent {
   links = ['main', 'timetable','news','about'];
-  
-  linkNames: Map<string, string>;
+  @Input() loggedInUser?: firebase.default.User | null;
+  @Output() onLogout: EventEmitter<boolean> = new EventEmitter();
 
   constructor() {
-    this.linkNames = new Map<string, string>();
-    this.linkNames.set('main', 'Főoldal');
-    this.linkNames.set('timetable', 'Menetrend');
-    this.linkNames.set('news', 'Hírek');
-    this.linkNames.set('about', 'Rólunk');
   }
 
-  ngOnInit() {
-    
+  logout() {
+    this.onLogout.emit(true);
   }
 }

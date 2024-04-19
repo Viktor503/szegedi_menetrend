@@ -1,8 +1,14 @@
 
 <nav mat-tab-nav-bar [tabPanel]="tabPanel" color="accent">
-    @for (link of linkNames.keys(); track link) {
-      <a mat-tab-link routerLink="{{link}}" > {{linkNames.get(link.toString())}} </a>
-    }
+    <a mat-tab-link routerLink="/main" > Főoldal </a>
+    
+    <a mat-tab-link routerLink="/timetable" > Menetrend </a>
+    <a mat-tab-link routerLink="/news" > Hírek </a>
+    <a mat-tab-link routerLink="/about" > Rólunk </a>
+    <a mat-tab-link routerLink="/register" *ngIf="!loggedInUser"> Regisztráció </a>
+    <a mat-tab-link routerLink="/login" *ngIf="!loggedInUser"> Bejelentkezés </a>
+    <a mat-tab-link routerLink="/profile" *ngIf="loggedInUser"> Profil </a>
+    <a mat-tab-link routerLink="/main" *ngIf="loggedInUser" (click)="logout()"> Kijelentkezés </a>
 </nav>
 <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
   
