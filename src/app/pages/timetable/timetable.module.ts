@@ -7,11 +7,14 @@ import { TimetableComponent } from './timetable.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-
+import { TimeFormatPipe } from '../../shared/pipes/time-format.pipe';
 
 @NgModule({
   declarations: [
     TimetableComponent
+  ],
+  providers: [
+    TimeFormatPipe
   ],
   imports: [
     CommonModule,

@@ -1,14 +1,14 @@
 {
   "targets": {
-    "menetrend-c90f2": {
+    "menetrend-8f1ea": {
       "hosting": {
         "menetrend": [
-          "menetrend-c90f2"
+          "menetrend-8f1ea"
         ]
       }
     }
   },
   "projects": {
-    "default": "menetrend-c90f2"
+    "default": "menetrend-8f1ea"
   }
 }

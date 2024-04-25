@@ -4,7 +4,6 @@ import { TimetableComponent } from './timetable.component';
 
 const routes: Routes = [
   { path: '', component: TimetableComponent },
-  { path: ':vehicle', component: TimetableComponent }
 ];
 
 @NgModule({

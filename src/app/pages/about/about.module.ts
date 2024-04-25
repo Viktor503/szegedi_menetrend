@@ -6,6 +6,7 @@ import { AboutRoutingModule } from './about-routing.module';
 import { AboutComponent } from './about.component';
 
 
+
 @NgModule({
   declarations: [
     AboutComponent
@@ -14,7 +15,7 @@ import { AboutComponent } from './about.component';
     CommonModule,
     AboutRoutingModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
   ]
 })
 export class AboutModule { }

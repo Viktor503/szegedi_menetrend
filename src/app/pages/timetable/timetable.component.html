@@ -4,39 +4,43 @@
         <mat-card-header><h1>Válassz járművet és megállót!</h1></mat-card-header>
         <mat-form-field>
             <mat-label>Válassz egy járművet: </mat-label>
-            <mat-select [(value)]="vehicle">
+            <mat-select [(value)]="vehicleid" (selectionChange)="loadIranyok()">
+                
                 @for (vehicle of vehicles; track vehicle) {
-                    <mat-option value="{{vehicle}}">{{vehicle}}</mat-option>
+                    <mat-option value="{{vehicle.route_id}}">{{vehicle.route_short_name}}</mat-option>
                 }
             </mat-select>
         </mat-form-field>
-        <mat-form-field *ngIf="vehicle">
-            <mat-label>Válassz egy megállót: </mat-label>    
-            <mat-select [(value)]="megallo">
-                <mat-option value="Szeged">Szeged</mat-option>
-                <mat-option value="Szeged">Szeged</mat-option>
-                <mat-option value="Szeged">Szeged</mat-option>
-            </mat-select>
-        </mat-form-field>
-        <mat-form-field *ngIf="vehicle && megallo">
+
+        <mat-form-field *ngIf="vehicleid && iranyok[0]!=''" >
             <mat-label>Válassz irányt: </mat-label>    
-            <mat-select [(value)]="irany">
-                <mat-option value="haza">haza</mat-option>
-                <mat-option value="el">el</mat-option>
+            <mat-select [(value)]="irany" (selectionChange)="loadMegallok()">
+                <mat-option value=0>{{iranyok[0]}}</mat-option>
+                <mat-option value=1 *ngIf="iranyok[1]!=''">{{iranyok[1]}}</mat-option>
             </mat-select>
         </mat-form-field>
+
+        <mat-form-field *ngIf="vehicleid && irany && iranyok[0]!=''" >
+            <mat-label>Válassz egy megállót: </mat-label>    
+            <mat-select [(value)]="megallo" (selectionChange)="loadTimetable()">
+                @for (megallo of megallok; track megallo) {
+                    <mat-option value={{megallo.stop_id}}>{{megallo.stop_name}}</mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+        <p *ngIf="vehicleid && iranyok[0]==''">Ez a jármű sajnos nem közlekedik :(</p>
     </mat-card>
     </div>
     <div >
-    <mat-card *ngIf="megallo&&vehicle&&irany">
-        <mat-card-header><h1>Ez itt a {{vehicle}} jármű menetrendje {{megallo}} megállóból {{irany}}!</h1></mat-card-header>
-        <div>
+    <mat-card *ngIf="megallo&&vehicleid&&irany">
+        <mat-card-header></mat-card-header>
+        <div *ngIf="loggedInUser!='null'">
             <button mat-icon-button color="primary" (click)="liked()" [ngClass]="{'nyomott': likestate==1, 'sima': likestate!=1}"><mat-icon>thumb_up</mat-icon></button>
             <mat-label color="primary">{{likes}}</mat-label>
             <button mat-icon-button color="primary" (click)="disliked()" [ngClass]="{'nyomott': likestate==2, 'sima': likestate!=2}"><mat-icon>thumb_down</mat-icon></button>
             <mat-label color="primary">{{dislikes}}</mat-label>
         </div>
-        <table>
+        <table *ngIf="timetable!=[]">
         @for (hour of formatted.keys(); track $index) {
             <tr>
                 <th>{{hour}}</th>

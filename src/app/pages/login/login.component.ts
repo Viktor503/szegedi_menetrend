@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  @Input() EMAIL?: string = '';
   fg = new FormGroup({
     email : new FormControl('',{validators: [Validators.required, Validators.email]}),
     password : new FormControl('',{validators:[Validators.required, Validators.minLength(6)]})
