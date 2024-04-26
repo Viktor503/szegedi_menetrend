@@ -1,4 +1,14 @@
 <div>
+    <mat-card class="megallolista" *ngIf="vehicleid && irany && iranyok[0]!=''">
+    
+            <mat-card-header><h1>Megállók</h1></mat-card-header>
+            <mat-card-content >
+                @for (megallo of megallok; track megallo) {
+                    <p>{{megallo.stop_name}}</p>
+                }
+            </mat-card-content>
+        
+    </mat-card>
     <div>
     <mat-card>
         <mat-card-header><h1>Válassz járművet és megállót!</h1></mat-card-header>
