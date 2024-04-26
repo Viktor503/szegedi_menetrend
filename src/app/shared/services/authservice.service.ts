@@ -22,4 +22,13 @@ export class AuthService {
   isUserLoggedIn() {
     return this.auth.user;
   }
+
+  deleteUser(){
+    this.auth.currentUser.then((user) => {
+      user?.delete().then(() => {
+      }).catch((error) => {
+        console.log(error)
+      })
+    })
+  }
 }

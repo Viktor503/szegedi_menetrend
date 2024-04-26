@@ -30,9 +30,7 @@ export class AppComponent {
     })
   }
   logout(_:boolean){
-    console.log('Logging out');
     this.authService.logout().then(() => {
-      console.log('Logged out');
       localStorage.removeItem('user');
       this.router.navigateByUrl('main');
     }).catch(error => {

@@ -1,0 +1,43 @@
+div{
+    display: flex;
+    flex-direction: row;
+    align-items:start;
+}
+#buttondiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+}
+table{
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 60%;
+    background-color: #d3cbe7;
+    padding-bottom: 5px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+th{
+    text-align: center;
+    border: 1px solid black;
+}
+tr{
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+mat-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 20px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+
+}

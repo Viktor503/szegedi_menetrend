@@ -34,12 +34,13 @@
     <div >
     <mat-card *ngIf="megallo&&vehicleid&&irany">
         <mat-card-header></mat-card-header>
-        <div *ngIf="loggedInUser!='null'">
+        <div>
             <button mat-icon-button color="primary" (click)="liked()" [ngClass]="{'nyomott': likestate==1, 'sima': likestate!=1}"><mat-icon>thumb_up</mat-icon></button>
             <mat-label color="primary">{{likes}}</mat-label>
             <button mat-icon-button color="primary" (click)="disliked()" [ngClass]="{'nyomott': likestate==2, 'sima': likestate!=2}"><mat-icon>thumb_down</mat-icon></button>
             <mat-label color="primary">{{dislikes}}</mat-label>
         </div>
+        <p>Hétköznapi menetrend:</p>
         <table *ngIf="timetable!=[]">
         @for (hour of formatted.keys(); track $index) {
             <tr>

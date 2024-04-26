@@ -1,1 +1,27 @@
-<p>Szia {{user.email}}!</p>
+<mat-card>
+    <mat-card-header>Profil</mat-card-header>
+    <mat-card-header>Üdvözlünk {{us?.username}}!</mat-card-header>
+    <mat-card-content>
+        <mat-card-content>
+            <div>
+                <table>
+                    <tr>
+                        <th>Kedvenc buszaid</th>
+                    </tr>
+                    <tr *ngFor="let item of us?.likes; let i = index">
+                        <td>{{item}}</td>
+                </table>
+                <table>
+                    <tr>
+                        <th>Legkevésbé kedvenc buszaid</th>
+                    </tr>
+                    <tr *ngFor="let item of us?.dislikes; let i = index">
+                        <td>{{item}}</td>
+                </table>
+            </div>
+            <div id="buttondiv">
+            <button mat-raised-button (click)="deleteProfile()" color='warn'>Inkább kitörölném magam</button>
+            </div>
+        </mat-card-content>
+    </mat-card-content>
+</mat-card>

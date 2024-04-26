@@ -12,7 +12,7 @@ export const News = [
     },
     {
         "Cim":"Április 1-jétől ingyenes a helyi közösségi közlekedés a 14 év alatti gyermekek számára",
-        "Datum":"2024 03.22",
+        "Datum":"2024.03.22",
         "Tartalom":"Szeged város helyi közforgalmi közösségi közlekedési járművein (villamosok, trolibuszok, helyi járatú autóbuszok) Szeged Megyei Jogú Város Közgyűlése elfogadta 2024. április 1-jétől a 14 év alatti gyermekek díjmentes utazását.",
         "Kep":"ingyenes.jpg"
     },

@@ -19,18 +19,14 @@ export class LoginComponent {
   
   constructor(private authService: AuthService, private router: Router) { }
   async login(){
-    console.log(await this.fg.get("email")?.value);
-    console.log(await this.fg.get("password")?.value);
     if(this.fg.get("email")?.invalid){
       this.error = 'Invalid email';
       
     }
     if(this.fg.get("password")?.invalid){
       this.error = 'Invalid password';
-      
     }
     this.authService.login(this.fg.get("email")?.value!,this.fg.get("password")?.value!).then((cred) => {
-      console.log(cred);
       this.router.navigateByUrl('/main');
     }).catch(error =>{
       this.error = 'Incorrenct email or password';

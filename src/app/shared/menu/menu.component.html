@@ -4,7 +4,7 @@
     
     <a mat-tab-link routerLink="/timetable" > Menetrend </a>
     <a mat-tab-link routerLink="/news" > Hírek </a>
-    <a mat-tab-link routerLink="/about" > Rólunk </a>
+    <a mat-tab-link routerLink="/about" *ngIf="loggedInUser"> Rólunk </a>
     <a mat-tab-link routerLink="/register" *ngIf="!loggedInUser"> Regisztráció </a>
     <a mat-tab-link routerLink="/login" *ngIf="!loggedInUser"> Bejelentkezés </a>
     <a mat-tab-link routerLink="/profile" *ngIf="loggedInUser"> Profil </a>

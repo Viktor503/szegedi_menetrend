@@ -5,7 +5,7 @@
 <p>Nézd meg a legújabb híreinket <a routerLink="/news">itt</a></p>
 <div class = "busratings">
 <mat-card>
-    <mat-card-header>Top 10 Legkedveltebb busz</mat-card-header>
+    <mat-card-header>Top 10 Legkedveltebb busz 😇</mat-card-header>
     <mat-card-content>
         <table>
             <tr>
@@ -16,8 +16,8 @@
             @for (item of likes_vr; track $index) {
             <tr>
                 <td>{{$index+1}}.</td>
-                <td>{{item.bus}}</td>
-                <td>{{item.likes}}</td>
+                <td>{{item.route_short_name}}</td>
+                <td>{{item[' likes']}}</td>
             </tr>
             }
         </table>
@@ -35,8 +35,8 @@
             @for (item of dislikes_vr; track $index) {
             <tr>
                 <td>{{$index+1}}.</td>
-                <td>{{item.bus}}</td>
-                <td>{{item.dislikes}}</td>
+                <td>{{item.route_short_name}}</td>
+                <td>{{item[' dislikes']}}</td>
             </tr>
             }
         </table>

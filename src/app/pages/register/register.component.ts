@@ -25,12 +25,10 @@ export class RegisterComponent {
     this.registerForm.setValidators(confirmPasswordValidator);
   }
   OnRegister() {
-    console.warn(this.registerForm.value);
     if (this.registerForm.invalid) {
       return;
     }
     this.authService.signup(this.registerForm.get('email')?.value!, this.registerForm.get('password')?.value!).then((cred) => {
-      console.log(cred);
       const user: User = {
         id: cred.user?.uid as string,
         email: cred.user?.email!,
@@ -38,9 +36,7 @@ export class RegisterComponent {
         likes: Array<string>(),
         dislikes: Array<string>()
       } as User;
-      console.log(user);
       this.userService.createUser(user).then(() => {
-        console.log('User created:', user);
         this.router.navigateByUrl('main');
       }).catch(error => {
         this.error = error;
@@ -48,7 +44,6 @@ export class RegisterComponent {
       });
     }).catch(error => {
       this.error = error;
-      console.log(this.error)
       console.error('Error signing up:', error.message);
     });
   }

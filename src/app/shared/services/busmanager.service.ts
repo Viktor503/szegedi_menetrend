@@ -29,8 +29,8 @@ export class BusmanagerService {
     return this.afs.collection<Trip>('trips', ref=> ref.where('route_id', '==', route_id)).valueChanges();
   }
 
-  getStopsIdbyTripIds(trip: string): Observable<Stop_time[]>{
-    return this.afs.collection<Stop_time>('stop_times', ref=> ref.where('trip_id', '==', trip).orderBy('trip_id').orderBy('stop_sequence')).valueChanges();
+  getStopsIdbyTripId(trip: string): Observable<Stop_time[]>{
+    return this.afs.collection<Stop_time>('stop_times', ref=> ref.where('trip_id', '==', trip).orderBy('stop_sequence')).valueChanges();
   }
   getStopsbyIds(stop_id: string[]): Observable<any>{
     return this.afs.collection('stops', ref=> ref.where('stop_id', 'in', stop_id)).valueChanges();

@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoadImageService {
 
-  constructor() { }
-  
+  constructor(private storage: AngularFireStorage) { }
+  loadImage(imageUrl: string) {
+    return this.storage.ref('/images/'+imageUrl).getDownloadURL();
+  }
 }

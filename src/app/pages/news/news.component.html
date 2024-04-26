@@ -7,7 +7,7 @@
             
         </mat-card-header>
         <mat-card-content>
-            <img *ngIf="new.Kep" src="../../../assets/{{new.Kep}}" >
+            <img *ngIf="new.Kep && new.Kep.includes('/')" src="{{new.Kep}}" >
             <h3>Dátum: {{new.Datum}}</h3>
             {{new.Tartalom}}
         </mat-card-content>
